@@ -64,6 +64,8 @@ export const Navbar = () => {
           <Link isExternal aria-label="LinkedIn" href={siteConfig.links.linkedin}>
             <LinkedinIcon className="text-default-500" />
           </Link>
+          {/* add border slate */}
+          <div className="border-l border-slate-500 mx-5" />
           <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
