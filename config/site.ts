@@ -5,65 +5,29 @@ export const siteConfig = {
   description: "Make beautiful websites regardless of your design experience.",
   navItems: [
     {
-      label: "Home",
-      href: "/",
+      label: "profil",
+      href: "#profil",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "pengalaman",
+      href: "#pengalaman",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "proyek",
+      href: "#proyek",
     },
     {
-      label: "Blog",
-      href: "/blog",
+      label: "keterampilan",
+      href: "#keterampilan",
     },
     {
-      label: "About",
-      href: "/about",
-    },
-  ],
-  navMenuItems: [
-    {
-      label: "Profile",
-      href: "/profile",
-    },
-    {
-      label: "Dashboard",
-      href: "/dashboard",
-    },
-    {
-      label: "Projects",
-      href: "/projects",
-    },
-    {
-      label: "Team",
-      href: "/team",
-    },
-    {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "kontak",
+      href: "#kontak",
     },
   ],
   links: {
-    github: "https://github.com/nextui-org/nextui",
-    twitter: "https://twitter.com/getnextui",
-    docs: "https://nextui.org",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    github: "https://github.com/aderizaldi",
+    gitlab: "https://gitlab.com/aderizaldi",
+    linkedin: "https://www.linkedin.com/in/aderizaldi",
   },
 };
