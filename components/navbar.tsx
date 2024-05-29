@@ -1,4 +1,5 @@
 'use client';
+
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -9,9 +10,7 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/link";
-import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
-import clsx from "clsx";
 import { useState } from "react";
 
 import { siteConfig } from "@/config/site";
