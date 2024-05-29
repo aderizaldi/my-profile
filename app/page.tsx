@@ -21,8 +21,8 @@ export default function Home() {
 
   return (
     <>
-      <section id="hero" className="grid grid-cols-1 md:grid-cols-2 min-h-100 align-middle">
-        <div className="py-8 md:py-10 w-full flex flex-col justify-center text-center md:text-start order-2 md:order-1">
+      <section className="grid grid-cols-1 md:grid-cols-2">
+        <div className="py-8 md:py-10 w-full flex flex-col justify-center text-center md:text-start order-2 md:order-1 min-h-[40vh] md:min-h-[80vh]">
           <h2 className={subtitle()}>
             Halo, saya <strong>Ade Rizaldi</strong>
           </h2>
@@ -40,7 +40,7 @@ export default function Home() {
           <h2 className={subtitle()}>
           </h2>
         </div>
-        <div className="py-10 w-full justify-center flex flex-row order-1 md:order-2">
+        <div className="py-10 w-full flex flex-row order-1 md:order-2 min-h-[40vh] md:min-h-[80vh] justify-center items-center">
           <motion.div
             animate={{
               y: [0, -10, 0],  // Defines the keyframes for vertical movement
@@ -64,11 +64,21 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-      <section id="profil"></section>
-      <section id="keterampilan"></section>
-      <section id="pengalaman"></section>
-      <section id="proyek"></section>
-      <section id="kontak"></section>
+      <section id="profil" className="grid grid-cols-1 pt-20 min-h-screen">
+        <h1 className={title({ color: "red", size: "sm", class: "col-span-12 text-center" })}>Profil</h1>
+      </section>
+      <section id="keterampilan" className="grid grid-cols-1 pt-20 min-h-screen">
+        <h1 className={title({ color: "red", size: "sm", class: "col-span-12 text-center" })}>Keterampilan</h1>
+      </section>
+      <section id="pengalaman" className="grid grid-cols-1 pt-20 min-h-screen">
+        <h1 className={title({ color: "red", size: "sm", class: "col-span-12 text-center" })}>Pengalaman</h1>
+      </section>
+      <section id="proyek" className="grid grid-cols-1 pt-20 min-h-screen">
+        <h1 className={title({ color: "red", size: "sm", class: "col-span-12 text-center" })}>Proyek</h1>
+      </section>
+      <section id="kontak" className="grid grid-cols-1 pt-20 min-h-screen">
+        <h1 className={title({ color: "red", size: "sm", class: "col-span-12 text-center" })}>Kontak</h1>
+      </section>
     </>
   );
 }
