@@ -9,16 +9,16 @@ export const siteConfig = {
       href: "#profil",
     },
     {
+      label: "keterampilan",
+      href: "#keterampilan",
+    },
+    {
       label: "pengalaman",
       href: "#pengalaman",
     },
     {
       label: "proyek",
       href: "#proyek",
-    },
-    {
-      label: "keterampilan",
-      href: "#keterampilan",
     },
     {
       label: "kontak",
