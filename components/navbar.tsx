@@ -34,30 +34,34 @@ export const Navbar = () => {
     proyekRef,
     kontakRef,
     scrollToSection,
+    activeSection,
   } = context;
 
   const navItems = [
     {
       label: "profil",
       ref: profilRef,
+      id: "profil",
     },
     {
       label: "keterampilan",
       ref: keterampilanRef,
+      id: "keterampilan",
     },
     {
       label: "pengalaman",
       ref: pengalamanRef,
+      id: "pengalaman",
     },
     {
       label: "proyek",
-      href: "#proyek",
       ref: proyekRef,
+      id: "proyek",
     },
     {
       label: "kontak",
-      href: "#kontak",
       ref: kontakRef,
+      id: "kontak",
     },
   ];
 
@@ -67,7 +71,6 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <div
             className="flex justify-start items-center gap-1 cursor-pointer"
-            aria-label="Home"
             onClick={() => window.scrollTo(0, 0)}
           >
             <p className="font-bold text-inherit">aderizaldi</p>
@@ -84,9 +87,12 @@ export const Navbar = () => {
             <NavbarItem key={index}>
               <div
                 color="foreground"
-                className="cursor-pointer"
+                className={`cursor-pointer subpixel-antialiased ${
+                  activeSection == item.id ? "active" : ""
+                }`}
                 onClick={() => scrollToSection(item.ref)}
               >
+                <span className="text-primary">/</span>
                 {item.label}
               </div>
             </NavbarItem>
@@ -134,9 +140,12 @@ export const Navbar = () => {
             >
               <div
                 color="foreground"
-                className="cursor-pointer"
+                className={`cursor-pointer subpixel-antialiased ${
+                  activeSection == item.id ? "active" : ""
+                }`}
                 onClick={() => scrollToSection(item.ref)}
               >
+                <span className="text-primary">/</span>
                 {item.label}
               </div>
             </NavbarMenuItem>

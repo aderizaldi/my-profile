@@ -6,3 +6,11 @@
   background-color: #d80032;
   color: #fff;
 }
+
+.active {
+  text-decoration-color: #d80032;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-underline-offset: 5px;
+  transition: all 0.3s;
+}

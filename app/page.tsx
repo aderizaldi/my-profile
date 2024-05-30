@@ -22,12 +22,22 @@ export default function Home() {
   if (!context) {
     return null; // Handle the case where context is undefined
   }
-  const { profilRef, keterampilanRef, pengalamanRef, proyekRef, kontakRef } =
-    context;
+  const {
+    homeRef,
+    profilRef,
+    keterampilanRef,
+    pengalamanRef,
+    proyekRef,
+    kontakRef,
+  } = context;
 
   return (
     <>
-      <section className="grid grid-cols-1 md:grid-cols-2" id="home">
+      <section
+        className="grid grid-cols-1 md:grid-cols-2"
+        id="home"
+        ref={homeRef}
+      >
         <div className="py-8 md:py-10 w-full flex flex-col justify-center text-center md:text-start order-2 md:order-1 min-h-[40vh] md:min-h-[80vh]">
           <h2 className={subtitle()}>
             Halo, saya <strong>Ade Rizaldi</strong>
@@ -76,14 +86,8 @@ export default function Home() {
         className="grid grid-cols-1 pt-20 min-h-screen"
         ref={profilRef}
       >
-        <h1
-          className={title({
-            color: "red",
-            size: "sm",
-            class: "col-span-12 text-center",
-          })}
-        >
-          Profil
+        <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block max-w-full text-center subpixel-antialiased">
+          <span className="text-primary">/</span>profil
         </h1>
       </section>
       <section
@@ -91,14 +95,8 @@ export default function Home() {
         className="grid grid-cols-1 pt-20 min-h-screen"
         ref={keterampilanRef}
       >
-        <h1
-          className={title({
-            color: "red",
-            size: "sm",
-            class: "col-span-12 text-center",
-          })}
-        >
-          Keterampilan
+        <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block max-w-full text-center subpixel-antialiased">
+          <span className="text-primary">/</span>keterampilan
         </h1>
       </section>
       <section
@@ -106,14 +104,8 @@ export default function Home() {
         className="grid grid-cols-1 pt-20 min-h-screen"
         ref={pengalamanRef}
       >
-        <h1
-          className={title({
-            color: "red",
-            size: "sm",
-            class: "col-span-12 text-center",
-          })}
-        >
-          Pengalaman
+        <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block max-w-full text-center subpixel-antialiased">
+          <span className="text-primary">/</span>pengalaman
         </h1>
       </section>
       <section
@@ -121,14 +113,8 @@ export default function Home() {
         className="grid grid-cols-1 pt-20 min-h-screen"
         ref={proyekRef}
       >
-        <h1
-          className={title({
-            color: "red",
-            size: "sm",
-            class: "col-span-12 text-center",
-          })}
-        >
-          Proyek
+        <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block max-w-full text-center subpixel-antialiased">
+          <span className="text-primary">/</span>proyek
         </h1>
       </section>
       <section
@@ -136,14 +122,8 @@ export default function Home() {
         className="grid grid-cols-1 pt-20 min-h-screen"
         ref={kontakRef}
       >
-        <h1
-          className={title({
-            color: "red",
-            size: "sm",
-            class: "col-span-12 text-center",
-          })}
-        >
-          Kontak
+        <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block max-w-full text-center subpixel-antialiased">
+          <span className="text-primary">/</span>kontak
         </h1>
       </section>
     </>
