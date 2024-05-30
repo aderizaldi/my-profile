@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Navbar as NextUINavbar,
@@ -11,38 +11,84 @@ import {
 } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import {
-  GithubIcon,
-  GitlabIcon,
-  LinkedinIcon,
-} from "@/components/icons";
+import { GithubIcon, GitlabIcon, LinkedinIcon } from "@/components/icons";
+
+import { SectionContext } from "@/contexts/SectionContext";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const context = useContext(SectionContext);
+
+  if (!context) {
+    return null; // Handle the case where context is undefined
+  }
+
+  const {
+    profilRef,
+    keterampilanRef,
+    pengalamanRef,
+    proyekRef,
+    kontakRef,
+    scrollToSection,
+  } = context;
+
+  const navItems = [
+    {
+      label: "profil",
+      ref: profilRef,
+    },
+    {
+      label: "keterampilan",
+      ref: keterampilanRef,
+    },
+    {
+      label: "pengalaman",
+      ref: pengalamanRef,
+    },
+    {
+      label: "proyek",
+      href: "#proyek",
+      ref: proyekRef,
+    },
+    {
+      label: "kontak",
+      href: "#kontak",
+      ref: kontakRef,
+    },
+  ];
+
   return (
     <NextUINavbar isMenuOpen={menuOpen} onMenuOpenChange={setMenuOpen}>
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="#home">
+          <div
+            className="flex justify-start items-center gap-1 cursor-pointer"
+            aria-label="Home"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             <p className="font-bold text-inherit">aderizaldi</p>
-          </NextLink>
+          </div>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden md:flex basis-3/5 md:basis-full" justify="center">
+      <NavbarContent
+        className="hidden md:flex basis-3/5 md:basis-full"
+        justify="center"
+      >
         <ul className="hidden md:flex gap-4">
-          {siteConfig.navItems.map((item, index) => (
+          {navItems.map((item, index) => (
             <NavbarItem key={index}>
-              <NextLink
+              <div
                 color="foreground"
-                href={item.href}
+                className="cursor-pointer"
+                onClick={() => scrollToSection(item.ref)}
               >
                 {item.label}
-              </NextLink>
+              </div>
             </NavbarItem>
           ))}
         </ul>
@@ -59,7 +105,11 @@ export const Navbar = () => {
           <Link isExternal aria-label="Gitlab" href={siteConfig.links.gitlab}>
             <GitlabIcon className="text-default-500" />
           </Link>
-          <Link isExternal aria-label="LinkedIn" href={siteConfig.links.linkedin}>
+          <Link
+            isExternal
+            aria-label="LinkedIn"
+            href={siteConfig.links.linkedin}
+          >
             <LinkedinIcon className="text-default-500" />
           </Link>
           {/* add border slate */}
@@ -75,16 +125,20 @@ export const Navbar = () => {
 
       <NavbarMenu>
         <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navItems.map((item, index) => (
-            <NavbarMenuItem key={index} onClick={() => {
-              setMenuOpen(false);
-            }}>
-              <NextLink
-                href={item.href}
+          {navItems.map((item, index) => (
+            <NavbarMenuItem
+              key={index}
+              onClick={() => {
+                setMenuOpen(false);
+              }}
+            >
+              <div
                 color="foreground"
+                className="cursor-pointer"
+                onClick={() => scrollToSection(item.ref)}
               >
                 {item.label}
-              </NextLink>
+              </div>
             </NavbarMenuItem>
           ))}
         </div>
@@ -95,7 +149,11 @@ export const Navbar = () => {
           <Link isExternal aria-label="Gitlab" href={siteConfig.links.gitlab}>
             <GitlabIcon className="text-default-500" />
           </Link>
-          <Link isExternal aria-label="LinkedIn" href={siteConfig.links.linkedin}>
+          <Link
+            isExternal
+            aria-label="LinkedIn"
+            href={siteConfig.links.linkedin}
+          >
             <LinkedinIcon className="text-default-500" />
           </Link>
         </div>

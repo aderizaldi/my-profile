@@ -31,24 +31,28 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html suppressHydrationWarning lang="id" className="scroll-smooth">
       <head />
       <body
-        id="home"
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
+          fontSans.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col min-h-screen">
+          <div
+            className="relative flex flex-col min-h-screen"
+          >
             <Navbar />
             <main className="container mx-auto max-w-7xl pt-10 px-6 flex-grow">
               {children}
             </main>
             <footer className="w-full flex items-center justify-center py-3 gap-1 text-current">
-              <span className="text-default-600">© {new Date().getFullYear()} </span>
+              <span className="text-default-600">
+                © {new Date().getFullYear()}{" "}
+              </span>
               <p className="text-primary">Ade Rizaldi</p>
             </footer>
           </div>
