@@ -40,7 +40,7 @@ export default function Home() {
         id="home"
         ref={homeRef}
       >
-        <div className="py-8 md:py-10 w-full flex flex-col justify-center items-center md:items-start order-2 md:order-1 min-h-[40vh] md:min-h-[80vh]">
+        <div className="py-5 md:py-10 w-full flex flex-col justify-center items-center md:items-start order-2 md:order-1 min-h-[40vh] md:min-h-[80vh]">
           <RevealAnimation>
             <h2 className={subtitle()}>
               Halo, saya <strong>Ade Rizaldi</strong>
@@ -72,13 +72,13 @@ export default function Home() {
               href="/cv-aderizaldi.pdf"
               download="cv-aderizaldi.pdf"
               target="_blank"
-              startContent={<BiFile size={20}/>}
+              startContent={<BiFile size={20} />}
             >
               Download CV
             </Button>
           </RevealAnimation>
         </div>
-        <div className="py-10 w-full flex flex-row order-1 md:order-2 min-h-[40vh] md:min-h-[80vh] justify-center items-center">
+        <div className="py-5 md:py-10 w-full flex flex-row order-1 md:order-2 min-h-[40vh] md:min-h-[80vh] justify-center items-center">
           <RevealAnimation>
             <motion.div
               animate={{
@@ -91,7 +91,10 @@ export default function Home() {
                 repeatType: "mirror", // Alternate direction on each repeat
               }}
             >
-              <Card radius="sm" className="w-[350px] border-none shadow-none">
+              <Card
+                radius="sm"
+                className="my-3 w-[350px] border-none shadow-none"
+              >
                 <Image
                   removeWrapper
                   className="z-0 w-full object-cover"
