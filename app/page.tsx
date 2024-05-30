@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState, useContext } from "react";
 import { SectionContext } from "@/contexts/SectionContext";
 import { RevealAnimation } from "@/components/reveal-animation";
+import { BiFile } from "react-icons/bi";
 
 const texts = ["Software Engineer", "Backend Developer"];
 
@@ -68,7 +69,10 @@ export default function Home() {
               radius="full"
               as={Link}
               color="primary"
-              href="#"
+              href="/cv-aderizaldi.pdf"
+              download="cv-aderizaldi.pdf"
+              target="_blank"
+              startContent={<BiFile size={20}/>}
             >
               Download CV
             </Button>
