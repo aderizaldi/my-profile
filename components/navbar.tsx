@@ -10,12 +10,11 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/link";
-import NextLink from "next/link";
 import { useState, useContext } from "react";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { GithubIcon, GitlabIcon, LinkedinIcon } from "@/components/icons";
+import { FaGithub, FaGitlab, FaLinkedin } from "react-icons/fa6";
 
 import { SectionContext } from "@/contexts/SectionContext";
 
@@ -106,17 +105,17 @@ export const Navbar = () => {
       >
         <NavbarItem className="hidden md:flex gap-2">
           <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
+            <FaGithub size="20" className="text-default-500" />
           </Link>
           <Link isExternal aria-label="Gitlab" href={siteConfig.links.gitlab}>
-            <GitlabIcon className="text-default-500" />
+            <FaGitlab size="20" className="text-default-500" />
           </Link>
           <Link
             isExternal
             aria-label="LinkedIn"
             href={siteConfig.links.linkedin}
           >
-            <LinkedinIcon className="text-default-500" />
+            <FaLinkedin size="20" className="text-default-500" />
           </Link>
           {/* add border slate */}
           <div className="border-l border-slate-500 mx-5" />
@@ -153,17 +152,17 @@ export const Navbar = () => {
         </div>
         <div className="flex justify-center gap-2 mt-4">
           <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
+            <FaGithub size="20" className="text-default-500" />
           </Link>
           <Link isExternal aria-label="Gitlab" href={siteConfig.links.gitlab}>
-            <GitlabIcon className="text-default-500" />
+            <FaGitlab size="20" className="text-default-500" />
           </Link>
           <Link
             isExternal
             aria-label="LinkedIn"
             href={siteConfig.links.linkedin}
           >
-            <LinkedinIcon className="text-default-500" />
+            <FaLinkedin size="20" className="text-default-500" />
           </Link>
         </div>
       </NavbarMenu>
