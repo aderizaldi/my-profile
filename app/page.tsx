@@ -110,52 +110,72 @@ export default function Home() {
 
       <section
         id="profil"
-        className="grid grid-cols-1 pt-20 min-h-screen"
+        className="pt-20 min-h-screen w-full"
         ref={profilRef}
       >
-        <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block max-w-full text-center subpixel-antialiased">
-          <span className="text-primary">/</span>profil
-        </h1>
+        <div className="w-full flex flex-col justify-center items-center">
+          <RevealAnimation>
+            <h1 className="py-3 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
+              <span className="text-primary">/</span>profil
+            </h1>
+          </RevealAnimation>
+        </div>
       </section>
 
       <section
         id="keterampilan"
-        className="grid grid-cols-1 pt-20 min-h-screen"
+        className="pt-20 min-h-screen w-full"
         ref={keterampilanRef}
       >
-        <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block max-w-full text-center subpixel-antialiased">
-          <span className="text-primary">/</span>keterampilan
-        </h1>
+        <div className="w-full flex flex-col justify-center items-center">
+          <RevealAnimation>
+            <h1 className="py-3 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
+              <span className="text-primary">/</span>keterampilan
+            </h1>
+          </RevealAnimation>
+        </div>
       </section>
 
       <section
         id="pengalaman"
-        className="grid grid-cols-1 pt-20 min-h-screen"
+        className="pt-20 min-h-screen w-full"
         ref={pengalamanRef}
       >
-        <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block max-w-full text-center subpixel-antialiased">
-          <span className="text-primary">/</span>pengalaman
-        </h1>
+        <div className="w-full flex flex-col justify-center items-center">
+          <RevealAnimation>
+            <h1 className="py-3 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
+              <span className="text-primary">/</span>pengalaman
+            </h1>
+          </RevealAnimation>
+        </div>
       </section>
 
       <section
         id="proyek"
-        className="grid grid-cols-1 pt-20 min-h-screen"
+        className="pt-20 min-h-screen w-full"
         ref={proyekRef}
       >
-        <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block max-w-full text-center subpixel-antialiased">
-          <span className="text-primary">/</span>proyek
-        </h1>
+        <div className="w-full flex flex-col justify-center items-center">
+          <RevealAnimation>
+            <h1 className="py-3 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
+              <span className="text-primary">/</span>proyek
+            </h1>
+          </RevealAnimation>
+        </div>
       </section>
 
       <section
         id="kontak"
-        className="grid grid-cols-1 pt-20 min-h-screen"
+        className="pt-20 min-h-screen w-full"
         ref={kontakRef}
       >
-        <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block max-w-full text-center subpixel-antialiased">
-          <span className="text-primary">/</span>kontak
-        </h1>
+        <div className="w-full flex flex-col justify-center items-center">
+          <RevealAnimation>
+            <h1 className="py-3 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
+              <span className="text-primary">/</span>kontak
+            </h1>
+          </RevealAnimation>
+        </div>
       </section>
     </>
   );

@@ -65,7 +65,11 @@ export const Navbar = () => {
   ];
 
   return (
-    <NextUINavbar isMenuOpen={menuOpen} onMenuOpenChange={setMenuOpen}>
+    <NextUINavbar
+      isMenuOpen={menuOpen}
+      onMenuOpenChange={setMenuOpen}
+      className="z-[100]"
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <div
