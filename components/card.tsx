@@ -17,7 +17,7 @@ interface Props {
 export const CardBrand = ({ name, image }: Props) => {
   return (
     <>
-      <Card isHoverable className="cursor-pointer p-2 hidden md:block">
+      <Card isHoverable className="cursor-default p-2 hidden md:block">
         <CardBody className="flex flex-row justify-start items-center gap-3">
           <Image
             removeWrapper
