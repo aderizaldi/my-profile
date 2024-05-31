@@ -15,6 +15,8 @@ import { useEffect, useState, useContext } from "react";
 import { SectionContext } from "@/contexts/SectionContext";
 import { RevealAnimation } from "@/components/reveal-animation";
 import { BiFile, BiSolidMap, BiSolidPieChart } from "react-icons/bi";
+import { CardBrand } from "@/components/card";
+import { brands } from "@/config/site";
 
 const texts = ["Software Engineer", "Backend Developer"];
 
@@ -233,6 +235,19 @@ export default function Home() {
               <span className="text-primary">/</span>keterampilan
             </h1>
           </RevealAnimation>
+          <div className="flex flex-row flex-wrap justify-center py-3 md:py-10 gap-3 w-full flex-wrap">
+            {brands.map((brand) => {
+              return (
+                <RevealAnimation>
+                  <CardBrand
+                    key={brand.name}
+                    name={brand.name}
+                    image={brand.image}
+                  />
+                </RevealAnimation>
+              );
+            })}
+          </div>
         </div>
       </section>
 
