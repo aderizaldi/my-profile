@@ -51,7 +51,7 @@ export default function RootLayout({
             <footer className="py-3 w-full flex flex-col items-center justify-center gap-1">
               <div className="flex items-center justify-center gap-1">
                 <p className="text-default-500">made with </p>
-                <span className="text-red-500">
+                <span className="text-primary">
                   <BiHeart />
                 </span>
                 <p className="text-default-500">by me</p>
