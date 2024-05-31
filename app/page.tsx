@@ -76,7 +76,7 @@ export default function Home() {
           </RevealAnimation>
           <RevealAnimation>
             <Button
-              className="mt-3"
+              className="mt-3 text-white"
               radius="full"
               as={Link}
               color="primary"
@@ -178,7 +178,11 @@ export default function Home() {
                     </p>
                   </CardHeader>
                   <CardBody className="flex flex-row justify-start items-center gap-2 flex-wrap">
-                    <Chip variant="solid" color="primary">
+                    <Chip
+                      variant="solid"
+                      color="primary"
+                      className="text-white"
+                    >
                       Jurusan Multimedia
                     </Chip>
                     <Chip
@@ -202,7 +206,11 @@ export default function Home() {
                     </p>
                   </CardHeader>
                   <CardBody className="flex flex-row justify-start items-center gap-2 flex-wrap">
-                    <Chip variant="solid" color="primary">
+                    <Chip
+                      variant="solid"
+                      color="primary"
+                      className="text-white"
+                    >
                       Jurusan Informatika
                     </Chip>
                     <Chip variant="dot" color="primary">
