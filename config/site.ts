@@ -60,6 +60,11 @@ export const brands = [
       "https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000",
   },
   {
+    name: "PostgreSQL",
+    image:
+      "https://img.icons8.com/?size=100&id=JRnxU7ZWP4mi&format=png&color=000000",
+  },
+  {
     name: "Git",
     image: "https://img.icons8.com/?size=100&id=20906&format=png&color=000000",
   },
@@ -95,6 +100,11 @@ export const brands = [
     image: "https://img.icons8.com/?size=100&id=45057&format=png&color=000000",
   },
   {
+    name: "Websocket",
+    image:
+      "https://raw.githubusercontent.com/Marfusios/websocket-client/master/websocket-logo.png",
+  },
+  {
     name: "Redis",
     image:
       "https://img.icons8.com/?size=100&id=pHS3eRpynIRQ&format=png&color=000000",
@@ -120,5 +130,9 @@ export const brands = [
     name: "Tailwind",
     image:
       "https://img.icons8.com/?size=100&id=4PiNHtUJVbLs&format=png&color=000000",
+  },
+  {
+    name: "Bootsrap",
+    image: "https://img.icons8.com/?size=100&id=84710&format=png&color=000000",
   },
 ];
