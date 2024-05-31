@@ -48,22 +48,20 @@ export default function RootLayout({
             <main className="container mx-auto max-w-7xl pt-10 px-6 flex-grow">
               {children}
             </main>
-            <footer className="py-3 w-full flex flex-col items-center justify-center gap-1">
+            <footer className="py-5 w-full flex flex-col items-center justify-center gap-1">
               <div className="flex items-center justify-center gap-1">
                 <p className="text-default-500">made with </p>
                 <span className="text-primary">
                   <BiHeart />
                 </span>
                 <p className="text-default-500">by me</p>
-                <span className="text-primary">Ade Rizaldi</span>
-              </div>
-              <div className="flex items-center justify-center gap-1">
                 <Link
-                  className="text-default-500"
+                  isExternal
                   href="https://instagram.com/ade.rizaldi"
                   target="_blank"
+                  className="text-primary"
                 >
-                  <BiLogoInstagramAlt size={32} />
+                  Ade Rizaldi
                 </Link>
               </div>
             </footer>
