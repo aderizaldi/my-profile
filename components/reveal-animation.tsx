@@ -42,7 +42,7 @@ export const RevealAnimation = ({ children, width = "w-fit" }: Props) => {
           delay: 0.25,
         }}
       >
-        {children}
+        <div className="p-1 w-full">{children}</div>
       </motion.div>
       <motion.div
         variants={{
