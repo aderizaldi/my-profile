@@ -232,6 +232,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pengalaman */}
+      <section
+        id="pengalaman"
+        className="pt-20 min-h-[90vh] w-full"
+        ref={pengalamanRef}
+      >
+        <div className="w-full flex flex-col justify-center items-center">
+          <RevealAnimation>
+            <h1 className="py-5 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
+              <span className="text-primary">/</span>pengalaman
+            </h1>
+          </RevealAnimation>
+        </div>
+        <div className="grid grid-cols-1 py-3 md:py-8 gap-5 md:gap-8 w-full">
+          <Timeline />
+        </div>
+      </section>
+
+      {/* Proyek */}
+      <section
+        id="proyek"
+        className="pt-20 min-h-[90vh] w-full"
+        ref={proyekRef}
+      >
+        <div className="w-full flex flex-col justify-center items-center">
+          <RevealAnimation>
+            <h1 className="py-5 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
+              <span className="text-primary">/</span>proyek
+            </h1>
+          </RevealAnimation>
+        </div>
+      </section>
+
       {/* Keterampilan */}
       <section
         id="keterampilan"
@@ -391,39 +424,6 @@ export default function Home() {
               </div>
             </RevealAnimation>
           </div>
-        </div>
-      </section>
-
-      {/* Pengalaman */}
-      <section
-        id="pengalaman"
-        className="pt-20 min-h-[90vh] w-full"
-        ref={pengalamanRef}
-      >
-        <div className="w-full flex flex-col justify-center items-center">
-          <RevealAnimation>
-            <h1 className="py-5 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
-              <span className="text-primary">/</span>pengalaman
-            </h1>
-          </RevealAnimation>
-        </div>
-        <div className="grid grid-cols-1 py-3 md:py-8 gap-5 md:gap-8 w-full">
-          <Timeline />
-        </div>
-      </section>
-
-      {/* Proyek */}
-      <section
-        id="proyek"
-        className="pt-20 min-h-[90vh] w-full"
-        ref={proyekRef}
-      >
-        <div className="w-full flex flex-col justify-center items-center">
-          <RevealAnimation>
-            <h1 className="py-5 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
-              <span className="text-primary">/</span>proyek
-            </h1>
-          </RevealAnimation>
         </div>
       </section>
 

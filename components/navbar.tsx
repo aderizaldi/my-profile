@@ -43,11 +43,6 @@ export const Navbar = () => {
       id: "profil",
     },
     {
-      label: "keterampilan",
-      ref: keterampilanRef,
-      id: "keterampilan",
-    },
-    {
       label: "pengalaman",
       ref: pengalamanRef,
       id: "pengalaman",
@@ -56,6 +51,11 @@ export const Navbar = () => {
       label: "proyek",
       ref: proyekRef,
       id: "proyek",
+    },
+    {
+      label: "keterampilan",
+      ref: keterampilanRef,
+      id: "keterampilan",
     },
     {
       label: "kontak",
