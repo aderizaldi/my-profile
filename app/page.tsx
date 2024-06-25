@@ -240,21 +240,155 @@ export default function Home() {
         <div className="w-full flex flex-col justify-center items-center">
           <RevealAnimation>
             <h1 className="py-5 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
-              <span className="text-primary">/</span>keterampilan
+              <span className="text-primary">/</span>Keterampilan
             </h1>
           </RevealAnimation>
-          <div className="flex flex-row flex-wrap justify-center py-3 md:py-10 gap-3 w-full flex-wrap">
-            {brands.map((brand) => {
-              return (
-                <RevealAnimation>
-                  <CardBrand
-                    key={brand.name}
-                    name={brand.name}
-                    image={brand.image}
-                  />
-                </RevealAnimation>
-              );
-            })}
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 py-3 md:py-10 gap-5 md:gap-10 w-full">
+          <div className="flex flex-col items-center md:items-start order-2 lg:order-1">
+            <RevealAnimation>
+              <div className="w-full flex flex-col py-3">
+                <h2 className="text-lg font-bold text-default-600 block subpixel-antialiased">
+                  Tools<span className="text-primary">.</span>
+                </h2>
+              </div>
+            </RevealAnimation>
+            <div className="w-full flex flex-col">
+              <RevealAnimation>
+                <div className="flex flex-row flex-wrap justify-start gap-3 w-full flex-wrap">
+                  {brands.map((brand) => {
+                    return (
+                      <CardBrand
+                        key={brand.name}
+                        name={brand.name}
+                        image={brand.image}
+                      />
+                    );
+                  })}
+                </div>
+              </RevealAnimation>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center md:items-start order-1 lg:order-2">
+            <RevealAnimation>
+              <div className="w-full flex flex-col py-3">
+                <h2 className="text-lg font-bold text-default-600 block subpixel-antialiased">
+                  Soft Skills<span className="text-primary">.</span>
+                </h2>
+              </div>
+            </RevealAnimation>
+            <RevealAnimation>
+              <div className="w-full">
+                <ul className="list-disc list-outside text-sm">
+                  <li className="text-primary font-bold text-justify">
+                    Problem Solving:{" "}
+                    <span className="text-default-600 font-normal">
+                      Kemampuan untuk menganalisis masalah kompleks dan
+                      menemukan solusi.
+                    </span>
+                  </li>
+                  <li className="text-primary font-bold text-justify">
+                    Communication:{" "}
+                    <span className="text-default-600 font-normal">
+                      Kemampuan untuk berkomunikasi dengan baik, baik secara
+                      lisan maupun tulisan, untuk berkolaborasi dengan tim,
+                      menjelaskan masalah teknis kepada non-teknisi, dan menulis
+                      dokumentasi yang jelas.
+                    </span>
+                  </li>
+                  <li className="text-primary font-bold text-justify">
+                    Time Management:{" "}
+                    <span className="text-default-600 font-normal">
+                      Kemampuan untuk mengelola waktu, termasuk pengaturan
+                      prioritas tugas dan penyelesaian proyek tepat waktu.
+                    </span>
+                  </li>
+                  <li className="text-primary font-bold text-justify">
+                    Adaptability:{" "}
+                    <span className="text-default-600 font-normal">
+                      Fleksibilitas untuk belajar dan beradaptasi dengan
+                      teknologi baru, alat, dan metodologi pengembangan.
+                    </span>
+                  </li>
+                  <li className="text-primary font-bold text-justify">
+                    Teamwork:{" "}
+                    <span className="text-default-600 font-normal">
+                      Kemampuan untuk bekerja secara kolaboratif dalam tim, baik
+                      dalam peran sebagai anggota tim maupun sebagai pemimpin.
+                    </span>
+                  </li>
+                  <li className="text-primary font-bold text-justify">
+                    Attention to Detail:{" "}
+                    <span className="text-default-600 font-normal">
+                      Ketelitian dalam menulis kode, debugging, dan melakukan
+                      pengujian untuk memastikan kualitas dari produk yang
+                      dihasilkan.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </RevealAnimation>
+            <RevealAnimation>
+              <div className="w-full flex flex-col py-3 mt-3">
+                <h2 className="text-lg font-bold text-default-600 block subpixel-antialiased">
+                  Hard Skills<span className="text-primary">.</span>
+                </h2>
+              </div>
+            </RevealAnimation>
+            <RevealAnimation>
+              <div className="w-full">
+                <ul className="list-disc list-outside text-sm">
+                  <li className="text-primary font-bold text-justify">
+                    Database Management:{" "}
+                    <span className="text-default-600 font-normal">
+                      Kemampuan untuk merancang, mengimplementasikan, dan
+                      mengelola database relasional (seperti MySQL, PostgreSQL)
+                      dan non-relasional (seperti MongoDB, Redis).
+                    </span>
+                  </li>
+                  <li className="text-primary font-bold text-justify">
+                    API Development:{" "}
+                    <span className="text-default-600 font-normal">
+                      Pengalaman dalam membuat dan mengelola RESTful API.
+                    </span>
+                  </li>
+                  <li className="text-primary font-bold text-justify">
+                    Server Management:{" "}
+                    <span className="text-default-600 font-normal">
+                      Pengetahuan tentang pengaturan dan pengelolaan server,
+                      termasuk penggunaan server seperti Apache, Nginx, atau
+                      layanan cloud seperti AWS, dan Google Cloud.
+                    </span>
+                  </li>
+                  <li className="text-primary font-bold text-justify">
+                    Version Control:{" "}
+                    <span className="text-default-600 font-normal">
+                      Penguasaan alat version control seperti Git untuk
+                      manajemen kode dan kolaborasi tim.
+                    </span>
+                  </li>
+                  <li className="text-primary font-bold text-justify">
+                    Security Best Practices:{" "}
+                    <span className="text-default-600 font-normal">
+                      Pemahaman tentang prinsip-prinsip keamanan dalam
+                      pengembangan perangkat lunak, termasuk penanganan data
+                      sensitif, enkripsi, dan praktik terbaik untuk mencegah
+                      serangan seperti SQL injection dan XSS.
+                    </span>
+                  </li>
+                  <li className="text-primary font-bold text-justify">
+                    Testing:{" "}
+                    <span className="text-default-600 font-normal">
+                      Kemampuan untuk menulis dan menjalankan unit tests,
+                      integration tests, dan end-to-end tests untuk memastikan
+                      kode bekerja sebagaimana mestinya.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </RevealAnimation>
           </div>
         </div>
       </section>
