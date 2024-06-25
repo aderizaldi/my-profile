@@ -17,8 +17,9 @@ import { RevealAnimation } from "@/components/reveal-animation";
 import { BiFile, BiSolidMap, BiSolidPieChart } from "react-icons/bi";
 import { CardBrand } from "@/components/card";
 import { brands } from "@/config/site";
+import { Timeline } from "@/components/timeline";
 
-const texts = ["Software Engineer", "Backend Developer"];
+const texts = ["Software Engineer", "Backend Developer", "Fullstack Developer"];
 
 export default function Home() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -133,7 +134,7 @@ export default function Home() {
           </RevealAnimation>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 py-3 md:py-10 gap-5 md:gap-10 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 py-3 md:py-8 gap-5 md:gap-8 w-full">
           {/* Tentang Saya */}
           <div className="flex flex-col items-center md:items-start">
             <RevealAnimation>
@@ -168,7 +169,7 @@ export default function Home() {
             </RevealAnimation>
             <div className="w-full flex flex-col gap-3">
               <RevealAnimation width="w-full">
-                <Card fullWidth isHoverable className="cursor-pointer">
+                <Card fullWidth isHoverable>
                   <CardHeader className="flex flex-col justify-start items-start">
                     <h2 className="text-md font-bold text-default-600 block subpixel-antialiased">
                       SMK Negeri 2 Singkawang
@@ -196,7 +197,7 @@ export default function Home() {
                 </Card>
               </RevealAnimation>
               <RevealAnimation width="w-full">
-                <Card fullWidth isHoverable className="cursor-pointer">
+                <Card fullWidth isHoverable>
                   <CardHeader className="flex flex-col justify-start items-start">
                     <h2 className="text-md font-bold text-default-600 block subpixel-antialiased">
                       Universitas Tanjungpura
@@ -245,7 +246,7 @@ export default function Home() {
           </RevealAnimation>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 py-3 md:py-10 gap-5 md:gap-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 py-3 md:py-8 gap-5 md:gap-8 w-full">
           <div className="flex flex-col items-center md:items-start order-2 lg:order-1">
             <RevealAnimation>
               <div className="w-full flex flex-col py-3">
@@ -256,7 +257,7 @@ export default function Home() {
             </RevealAnimation>
             <div className="w-full flex flex-col">
               <RevealAnimation>
-                <div className="flex flex-row flex-wrap justify-start gap-3 w-full flex-wrap">
+                <div className="flex flex-row flex-wrap justify-center md:justify-start gap-3 w-full flex-wrap">
                   {brands.map((brand) => {
                     return (
                       <CardBrand
@@ -405,6 +406,9 @@ export default function Home() {
               <span className="text-primary">/</span>pengalaman
             </h1>
           </RevealAnimation>
+        </div>
+        <div className="grid grid-cols-1 py-3 md:py-8 gap-5 md:gap-8 w-full">
+          <Timeline />
         </div>
       </section>
 
