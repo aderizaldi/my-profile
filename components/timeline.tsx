@@ -160,113 +160,113 @@ export const Timeline = () => {
               </time>
             </CardHeader>
             <CardBody>
-              <p className="text-md font-bold text-gray-500">
-                with{" "}
-                <a
-                  href="https://ngodinghouse.com"
-                  target="_blank"
-                  className="hover:text-primary"
-                >
-                  Ngoding House
-                </a>
-              </p>
-              <div className="ps-3">
-                <ul className="list-disc list-outside text-sm text-justify text-primary">
-                  <li>
-                    <span className="text-default-600 font-normal">
-                      Bertanggung jawab atas pengembangan aplikasi dari berbagai
-                      client bersama tim Ngoding House.
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </CardBody>
-            <CardBody>
-              <p className="text-md font-bold text-gray-500">
-                with{" "}
-                <a
-                  href="https://grhadigital.id/"
-                  target="_blank"
-                  className="hover:text-primary"
-                >
-                  PT Grha Digital Indonesia
-                </a>
-              </p>
-              <div className="ps-3">
-                <ul className="list-disc list-outside text-sm text-justify text-primary">
-                  <li>
-                    <span className="text-default-600 font-normal">
-                      Memelihara server dan men-deploy aplikasi dan website PT
-                      Grha Digital Indonesia
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </CardBody>
-            <CardBody>
-              <p className="text-md font-bold text-gray-500">
-                with{" "}
-                <a
-                  href="https://teknik.untan.ac.id/"
-                  target="_blank"
-                  className="hover:text-primary"
-                >
-                  Fakultas Teknik Universitas Tanjungpura
-                </a>
-              </p>
-              <div className="ps-3">
-                <ul className="list-disc list-outside text-sm text-justify text-primary">
-                  <li>
-                    <span className="text-default-600 font-normal">
-                      Mengembangkan aplikasi dan website yang diperlukan oleh
-                      Fakultaas Teknik Universitas Tanjungpura.
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </CardBody>
-            <CardBody>
-              <p className="text-md font-bold text-gray-500">
-                with{" "}
-                <a
-                  href="https://tik.untan.ac.id/"
-                  target="_blank"
-                  className="hover:text-primary"
-                >
-                  UPT TIK Universitas Tanjungpura
-                </a>
-              </p>
-              <div className="ps-3">
-                <ul className="list-disc list-outside text-sm text-justify text-primary">
-                  <li>
-                    <span className="text-default-600 font-normal">
-                      Mengembangkan aplikasi dan website yang diperlukan oleh
-                      Universitas Tanjungpura.
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </CardBody>
-            <CardBody>
-              <p className="text-md font-bold text-gray-500">
-                with{" "}
-                <a
-                  href="https://www.bwskal1.or.id/"
-                  target="_blank"
-                  className="hover:text-primary"
-                >
-                  BWS Kalimantan I Pontianak
-                </a>
-              </p>
-              <div className="ps-3">
-                <ul className="list-disc list-outside text-sm text-justify text-primary">
-                  <li>
-                    <span className="text-default-600 font-normal">
-                      Mengembangkan aplikasi dan website yang diperlukan
-                      Universitas Tanjungpura.
-                    </span>
-                  </li>
-                </ul>
+              <h5 className="text-md font-extrabold text-primary">Client:</h5>
+              <div className="flex flex-col gap-2">
+                <div>
+                  <p className="text-sm font-bold text-gray-500">
+                    <a
+                      href="https://ngodinghouse.com"
+                      target="_blank"
+                      className="hover:text-primary"
+                    >
+                      Ngoding House
+                    </a>
+                  </p>
+                  <div className="ps-3">
+                    <ul className="list-disc list-outside text-sm text-justify text-primary">
+                      <li>
+                        <span className="text-default-600 font-normal">
+                          Bertanggung jawab atas pengembangan aplikasi dari
+                          berbagai client bersama tim Ngoding House.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-gray-500">
+                    <a
+                      href="https://grhadigital.id/"
+                      target="_blank"
+                      className="hover:text-primary"
+                    >
+                      PT Grha Digital Indonesia
+                    </a>
+                  </p>
+                  <div className="ps-3">
+                    <ul className="list-disc list-outside text-sm text-justify text-primary">
+                      <li>
+                        <span className="text-default-600 font-normal">
+                          Memelihara server dan men-deploy aplikasi dan website
+                          PT Grha Digital Indonesia
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-gray-500">
+                    <a
+                      href="https://teknik.untan.ac.id/"
+                      target="_blank"
+                      className="hover:text-primary"
+                    >
+                      Fakultas Teknik Universitas Tanjungpura
+                    </a>
+                  </p>
+                  <div className="ps-3">
+                    <ul className="list-disc list-outside text-sm text-justify text-primary">
+                      <li>
+                        <span className="text-default-600 font-normal">
+                          Mengembangkan aplikasi dan website yang diperlukan
+                          oleh Fakultas Teknik Universitas Tanjungpura.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-gray-500">
+                    <a
+                      href="https://tik.untan.ac.id/"
+                      target="_blank"
+                      className="hover:text-primary"
+                    >
+                      UPT TIK Universitas Tanjungpura
+                    </a>
+                  </p>
+                  <div className="ps-3">
+                    <ul className="list-disc list-outside text-sm text-justify text-primary">
+                      <li>
+                        <span className="text-default-600 font-normal">
+                          Mengembangkan aplikasi dan website yang diperlukan
+                          oleh Universitas Tanjungpura.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-gray-500">
+                    <a
+                      href="https://www.bwskal1.or.id/"
+                      target="_blank"
+                      className="hover:text-primary"
+                    >
+                      BWS Kalimantan I Pontianak
+                    </a>
+                  </p>
+                  <div className="ps-3">
+                    <ul className="list-disc list-outside text-sm text-justify text-primary">
+                      <li>
+                        <span className="text-default-600 font-normal">
+                          Mengembangkan aplikasi dan website yang diperlukan
+                          Universitas Tanjungpura.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </CardBody>
             <CardFooter>
