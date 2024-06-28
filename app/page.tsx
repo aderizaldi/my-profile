@@ -38,9 +38,9 @@ export default function Home() {
   const {
     homeRef,
     profilRef,
-    keterampilanRef,
     pengalamanRef,
     proyekRef,
+    keterampilanRef,
     kontakRef,
   } = context;
 
@@ -52,7 +52,7 @@ export default function Home() {
         id="home"
         ref={homeRef}
       >
-        <div className="py-5 md:py-10 w-full flex flex-col justify-center items-center md:items-start order-2 md:order-1 min-h-[40vh] md:min-h-[80vh]">
+        <div className="w-full flex flex-col justify-center items-center md:items-start order-2 md:order-1 min-h-[40vh] md:min-h-[80vh]">
           <RevealAnimation>
             <h2 className={subtitle()}>
               Halo, saya <strong>Ade Rizaldi</strong>
@@ -90,7 +90,7 @@ export default function Home() {
             </Button>
           </RevealAnimation>
         </div>
-        <div className="py-5 md:py-10 w-full flex flex-row order-1 md:order-2 min-h-[40vh] md:min-h-[80vh] justify-center items-center">
+        <div className="w-full flex flex-row order-1 md:order-2 min-h-[40vh] md:min-h-[80vh] justify-center items-center">
           <RevealAnimation>
             <motion.div
               animate={{
@@ -128,7 +128,7 @@ export default function Home() {
       >
         <div className="w-full flex flex-col justify-center items-center">
           <RevealAnimation>
-            <h1 className="py-5 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
+            <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
               <span className="text-primary">/</span>profil
             </h1>
           </RevealAnimation>
@@ -240,7 +240,7 @@ export default function Home() {
       >
         <div className="w-full flex flex-col justify-center items-center">
           <RevealAnimation>
-            <h1 className="py-5 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
+            <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
               <span className="text-primary">/</span>pengalaman
             </h1>
           </RevealAnimation>
@@ -258,7 +258,7 @@ export default function Home() {
       >
         <div className="w-full flex flex-col justify-center items-center">
           <RevealAnimation>
-            <h1 className="py-5 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
+            <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
               <span className="text-primary">/</span>proyek
             </h1>
           </RevealAnimation>
@@ -273,7 +273,7 @@ export default function Home() {
       >
         <div className="w-full flex flex-col justify-center items-center">
           <RevealAnimation>
-            <h1 className="py-5 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
+            <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
               <span className="text-primary">/</span>Keterampilan
             </h1>
           </RevealAnimation>
@@ -440,7 +440,7 @@ export default function Home() {
       >
         <div className="w-full flex flex-col justify-center items-center">
           <RevealAnimation>
-            <h1 className="py-5 text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
+            <h1 className="text-2xl lg:text-3xl font-bold text-default-600 block subpixel-antialiased">
               <span className="text-primary">/</span>kontak
             </h1>
           </RevealAnimation>

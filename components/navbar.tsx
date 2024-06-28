@@ -91,7 +91,7 @@ export const Navbar = () => {
               <div
                 color="foreground"
                 className={`cursor-pointer subpixel-antialiased ${
-                  activeSection == item.id ? "active" : ""
+                  activeSection === item.id ? "active" : ""
                 }`}
                 onClick={() => scrollToSection(item.ref)}
               >

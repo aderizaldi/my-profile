@@ -4,9 +4,9 @@ import { createContext, useRef, ReactNode, useState, useEffect } from "react";
 interface SectionContextType {
   homeRef: React.RefObject<HTMLDivElement>;
   profilRef: React.RefObject<HTMLDivElement>;
-  keterampilanRef: React.RefObject<HTMLDivElement>;
   pengalamanRef: React.RefObject<HTMLDivElement>;
   proyekRef: React.RefObject<HTMLDivElement>;
+  keterampilanRef: React.RefObject<HTMLDivElement>;
   kontakRef: React.RefObject<HTMLDivElement>;
   scrollToSection: (sectionRef: React.RefObject<HTMLDivElement>) => void;
   activeSection: string;
@@ -23,9 +23,9 @@ interface SectionProviderProps {
 export const SectionProvider = ({ children }: SectionProviderProps) => {
   const homeRef = useRef<HTMLDivElement>(null);
   const profilRef = useRef<HTMLDivElement>(null);
-  const keterampilanRef = useRef<HTMLDivElement>(null);
   const pengalamanRef = useRef<HTMLDivElement>(null);
   const proyekRef = useRef<HTMLDivElement>(null);
+  const keterampilanRef = useRef<HTMLDivElement>(null);
   const kontakRef = useRef<HTMLDivElement>(null);
   const [activeSection, setActiveSection] = useState<string>("");
 
@@ -39,7 +39,7 @@ export const SectionProvider = ({ children }: SectionProviderProps) => {
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.7,
+      threshold: 0.3,
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
