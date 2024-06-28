@@ -315,7 +315,7 @@ export default function Home() {
             </RevealAnimation>
             <RevealAnimation>
               <div className="w-full">
-                <ul className="list-disc list-outside text-sm">
+                <ul className="list-disc list-outside text-sm ps-3">
                   <li className="text-primary font-bold text-justify">
                     Problem Solving:{" "}
                     <span className="text-default-600 font-normal">
@@ -372,8 +372,15 @@ export default function Home() {
               </div>
             </RevealAnimation>
             <RevealAnimation>
-              <div className="w-full">
+              <div className="w-full ps-3">
                 <ul className="list-disc list-outside text-sm">
+                  <li className="text-primary font-bold text-justify">
+                    Programming Languages:{" "}
+                    <span className="text-default-600 font-normal">
+                      Pemahaman tentang bahasa pemrograman seperti Javascript,
+                      Typescript, PHP, dan Lainnya.
+                    </span>
+                  </li>
                   <li className="text-primary font-bold text-justify">
                     Database Management:{" "}
                     <span className="text-default-600 font-normal">
@@ -407,9 +414,7 @@ export default function Home() {
                     Security Best Practices:{" "}
                     <span className="text-default-600 font-normal">
                       Pemahaman tentang prinsip-prinsip keamanan dalam
-                      pengembangan perangkat lunak, termasuk penanganan data
-                      sensitif, enkripsi, dan praktik terbaik untuk mencegah
-                      serangan seperti SQL injection dan XSS.
+                      pengembangan perangkat lunak.
                     </span>
                   </li>
                   <li className="text-primary font-bold text-justify">
