@@ -31,7 +31,7 @@ export const Timeline = () => {
       <TimelineItem>
         <RevealAnimation>
           <Card isHoverable className="p-4">
-            <CardHeader className="flex items-center justify-between space-x-2 mb-1">
+            <CardHeader className="flex flex-wrap items-center justify-between space-x-2 mb-1">
               <div>
                 <h5 className="text-lg font-bold p-0 m-0">Backend Developer</h5>
                 <p className="text-md font-bold text-gray-500">
@@ -44,7 +44,7 @@ export const Timeline = () => {
                   </a>
                 </p>
               </div>
-              <time className="fond-medium text-sm text-primary">
+              <time className="fond-medium text-sm text-primary text-nowrap">
                 Feb 2022 - Jul 2022
               </time>
             </CardHeader>
@@ -86,7 +86,7 @@ export const Timeline = () => {
       <TimelineItem>
         <RevealAnimation>
           <Card isHoverable className="p-4">
-            <CardHeader className="flex items-center justify-between space-x-2 mb-1">
+            <CardHeader className="flex flex-wrap items-center justify-between space-x-2 mb-1">
               <div>
                 <h5 className="text-lg font-bold p-0 m-0">Backend Developer</h5>
                 <p className="text-md font-bold text-gray-500">
@@ -99,7 +99,7 @@ export const Timeline = () => {
                   </a>
                 </p>
               </div>
-              <time className="fond-medium text-sm text-primary">
+              <time className="fond-medium text-sm text-primary text-nowrap">
                 Feb 2023 - Sep 2023
               </time>
             </CardHeader>
@@ -141,7 +141,7 @@ export const Timeline = () => {
       <TimelineItem icon={<BiLoader />}>
         <RevealAnimation>
           <Card isHoverable className="p-4">
-            <CardHeader className="flex items-center justify-between space-x-2 mb-1">
+            <CardHeader className="flex flex-wrap items-center justify-between space-x-2 mb-1">
               <div>
                 <h5 className="text-lg font-bold p-0 m-0">Freelancer</h5>
                 {/* <p className="text-md font-bold text-gray-500">
@@ -155,7 +155,7 @@ export const Timeline = () => {
                   </a>
                 </p> */}
               </div>
-              <time className="fond-medium text-sm text-primary">
+              <time className="fond-medium text-sm text-primary text-nowrap">
                 Nov 2023 - Sekarang
               </time>
             </CardHeader>

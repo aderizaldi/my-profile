@@ -9,12 +9,14 @@ import {
   Chip,
   Image,
   Link,
+  Input,
+  Textarea,
 } from "@nextui-org/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState, useContext } from "react";
 import { SectionContext } from "@/contexts/SectionContext";
 import { RevealAnimation } from "@/components/reveal-animation";
-import { BiFile, BiSolidMap } from "react-icons/bi";
+import { BiFile, BiSend, BiSolidMap } from "react-icons/bi";
 import { CardBrand } from "@/components/card";
 import { brands } from "@/config/site";
 import { Timeline } from "@/components/timeline";
@@ -312,7 +314,7 @@ export const Keterampilan = () => {
           </RevealAnimation>
           <div className="w-full flex flex-col">
             <RevealAnimation>
-              <div className="flex flex-row flex-wrap justify-center md:justify-start gap-3 w-full flex-wrap">
+              <div className="flex flex-row flex-wrap justify-center md:justify-start gap-3 w-full">
                 {brands.map((brand) => {
                   return (
                     <CardBrand
@@ -474,6 +476,47 @@ export const Kontak = () => {
             <span className="text-primary">/</span>kontak
           </h1>
         </RevealAnimation>
+      </div>
+
+      <div className="grid grid-cols-1 py-3 md:py-8 gap-5 md:gap-8 w-full place-items-center">
+        <Card className="w-full lg:w-3/4 p-8">
+          <div className="flex flex-col flex-wrap gap-2">
+            <Input
+              type="text"
+              label="Nama"
+              variant="bordered"
+              className="w-full"
+            />
+            <Input
+              type="email"
+              label="Email"
+              variant="bordered"
+              className="w-full"
+            />
+            <Textarea
+              label="Pesan"
+              placeholder="Tulis pesan Anda di sini..."
+              variant="bordered"
+              className="max-full"
+              minRows={8}
+            />
+            <div className="w-full flex flex-row justify-end gap-2">
+              <Button
+                className="mt-3 text-white"
+                variant="bordered"
+              >
+                Reset
+              </Button>
+              <Button
+                className="mt-3 text-white"
+                color="primary"
+                startContent={<BiSend size={20} />}
+              >
+                Kirim Email
+              </Button>
+            </div>
+          </div>
+        </Card>
       </div>
     </section>
   );
