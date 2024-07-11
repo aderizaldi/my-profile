@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useContext } from "react";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -10,7 +11,6 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/link";
-import { useState, useContext } from "react";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -90,9 +90,8 @@ export const Navbar = () => {
             <NavbarItem key={index}>
               <div
                 color="foreground"
-                className={`cursor-pointer subpixel-antialiased ${
-                  activeSection === item.id ? "active" : ""
-                }`}
+                className={`cursor-pointer subpixel-antialiased ${activeSection === item.id ? "active" : ""
+                  }`}
                 onClick={() => scrollToSection(item.ref)}
               >
                 <span className="text-primary">/</span>
@@ -143,9 +142,8 @@ export const Navbar = () => {
             >
               <div
                 color="foreground"
-                className={`cursor-pointer subpixel-antialiased ${
-                  activeSection == item.id ? "active" : ""
-                }`}
+                className={`cursor-pointer subpixel-antialiased ${activeSection == item.id ? "active" : ""
+                  }`}
                 onClick={() => scrollToSection(item.ref)}
               >
                 <span className="text-primary">/</span>

@@ -1,14 +1,12 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
-
-import { Providers } from "./providers";
-
+import { Link } from "@nextui-org/link";
+import { BiHeart } from "react-icons/bi";
+import { Providers } from "@/app/providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
-import { BiHeart, BiLogoInstagram, BiLogoInstagramAlt } from "react-icons/bi";
-import { Link } from "@nextui-org/link";
 
 export const metadata: Metadata = {
   title: {

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState, useContext } from "react";
 import { title, subtitle } from "@/components/primitives";
 import {
   Button,
@@ -13,7 +14,6 @@ import {
   Textarea,
 } from "@nextui-org/react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState, useContext } from "react";
 import { SectionContext } from "@/contexts/SectionContext";
 import { RevealAnimation } from "@/components/reveal-animation";
 import { BiFile, BiLogoInstagram, BiLogoLinkedin, BiLogoWhatsapp, BiSend, BiSolidMap } from "react-icons/bi";

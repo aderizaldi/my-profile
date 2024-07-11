@@ -1,9 +1,9 @@
 "use client";
-import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/card";
-import { Chip } from "@nextui-org/react";
-import { BiSolidMap, BiCheck, BiLoader } from "react-icons/bi";
-import { RevealAnimation } from "./reveal-animation";
+
 import { ReactNode } from "react";
+import { Chip, Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
+import { BiSolidMap, BiCheck, BiLoader } from "react-icons/bi";
+import { RevealAnimation } from "@/components/reveal-animation";
 
 type TimelineItemProps = {
   icon?: ReactNode;
