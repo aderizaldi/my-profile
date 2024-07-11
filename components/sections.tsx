@@ -503,97 +503,101 @@ export const Kontak = () => {
       </div>
 
       <div className="grid grid-cols-1 py-3 md:py-8 gap-5 md:gap-8 w-full place-items-center">
-        <Card className="w-full lg:w-3/4 p-8">
-          <div className="flex flex-col flex-wrap gap-8">
-            <div className="text-center">
-              <h2 className="text-lg font-bold text-default-600 block subpixel-antialiased">
-                <span className="text-primary">Hubungi</span> saya untuk berdiskusi lebih lanjut<span className="text-primary">.</span>
-              </h2>
-            </div>
-            <div className="flex justify-center items-center gap-3">
-              <Button
-                isIconOnly
-                radius="full"
-                as={Link}
-                href="https://wa.me/6282158155347"
-                target="_blank"
-                size="lg"
-              >
-                <BiLogoWhatsapp size={24} />
-              </Button>
-              <Button
-                isIconOnly
-                radius="full"
-                as={Link}
-                href="https://instagram.com/ade.rizaldi"
-                target="_blank"
-                size="lg"
-              >
-                <BiLogoInstagram size={24} />
-              </Button>
-              <Button
-                isIconOnly
-                radius="full"
-                as={Link}
-                href="https://www.linkedin.com/in/aderizaldi"
-                target="_blank"
-                size="lg"
-              >
-                <BiLogoLinkedin size={24} />
-              </Button>
-            </div>
-            <div className="text-center">
-              <p className="text-md text-default-600 block subpixel-antialiased">
-                atau email:
-              </p>
-            </div>
-            <div className="flex flex-col flex-wrap gap-3">
-              {alert && <Alert type={alert.type} message={alert.message} />}
-              <Input
-                type="text"
-                label="Nama"
-                variant="bordered"
-                className="w-full"
-                onChange={(e) => setNama(e.target.value)}
-                value={nama}
-              />
-              <Input
-                type="email"
-                label="Email"
-                variant="bordered"
-                className="w-full"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-              />
-              <Textarea
-                label="Pesan"
-                placeholder="Tulis pesan Anda di sini..."
-                variant="bordered"
-                className="max-full"
-                minRows={8}
-                onChange={(e) => setPesan(e.target.value)}
-                value={pesan}
-              />
-              <div className="w-full flex flex-row justify-end gap-2">
-                <Button
-                  className="mt-3 text-white"
-                  variant="bordered"
-                  onClick={handleResetForm}
-                >
-                  Reset
-                </Button>
-                <Button
-                  className="mt-3 text-white"
-                  color="primary"
-                  startContent={<BiSend size={20} />}
-                  onClick={handleSendForm}
-                >
-                  Kirim Email
-                </Button>
+        <div className="w-full lg:w-3/4">
+          <RevealAnimation width="w-full">
+            <Card fullWidth className="p-8">
+              <div className="flex flex-col flex-wrap gap-8">
+                <div className="text-center">
+                  <h2 className="text-lg font-bold text-default-600 block subpixel-antialiased">
+                    <span className="text-primary">Hubungi</span> saya untuk berdiskusi lebih lanjut<span className="text-primary">.</span>
+                  </h2>
+                </div>
+                <div className="flex justify-center items-center gap-3">
+                  <Button
+                    isIconOnly
+                    radius="full"
+                    as={Link}
+                    href="https://wa.me/6282158155347"
+                    target="_blank"
+                    size="lg"
+                  >
+                    <BiLogoWhatsapp size={24} />
+                  </Button>
+                  <Button
+                    isIconOnly
+                    radius="full"
+                    as={Link}
+                    href="https://instagram.com/ade.rizaldi"
+                    target="_blank"
+                    size="lg"
+                  >
+                    <BiLogoInstagram size={24} />
+                  </Button>
+                  <Button
+                    isIconOnly
+                    radius="full"
+                    as={Link}
+                    href="https://www.linkedin.com/in/aderizaldi"
+                    target="_blank"
+                    size="lg"
+                  >
+                    <BiLogoLinkedin size={24} />
+                  </Button>
+                </div>
+                <div className="text-center">
+                  <p className="text-md text-default-600 block subpixel-antialiased">
+                    atau email:
+                  </p>
+                </div>
+                <div className="flex flex-col flex-wrap gap-3">
+                  {alert && <Alert type={alert.type} message={alert.message} />}
+                  <Input
+                    type="text"
+                    label="Nama"
+                    variant="bordered"
+                    className="w-full"
+                    onChange={(e) => setNama(e.target.value)}
+                    value={nama}
+                  />
+                  <Input
+                    type="email"
+                    label="Email"
+                    variant="bordered"
+                    className="w-full"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                  />
+                  <Textarea
+                    label="Pesan"
+                    placeholder="Tulis pesan Anda di sini..."
+                    variant="bordered"
+                    className="max-full"
+                    minRows={8}
+                    onChange={(e) => setPesan(e.target.value)}
+                    value={pesan}
+                  />
+                  <div className="w-full flex flex-row justify-end gap-2">
+                    <Button
+                      className="mt-3 text-white"
+                      variant="bordered"
+                      onClick={handleResetForm}
+                    >
+                      Reset
+                    </Button>
+                    <Button
+                      className="mt-3 text-white"
+                      color="primary"
+                      startContent={<BiSend size={20} />}
+                      onClick={handleSendForm}
+                    >
+                      Kirim Email
+                    </Button>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </Card>
+            </Card>
+          </RevealAnimation>
+        </div>
       </div>
     </section>
   );
