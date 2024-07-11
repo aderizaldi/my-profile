@@ -16,10 +16,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState, useContext } from "react";
 import { SectionContext } from "@/contexts/SectionContext";
 import { RevealAnimation } from "@/components/reveal-animation";
-import { BiFile, BiSend, BiSolidMap } from "react-icons/bi";
+import { BiFile, BiLogoInstagram, BiLogoLinkedin, BiLogoWhatsapp, BiSend, BiSolidMap } from "react-icons/bi";
 import { CardBrand } from "@/components/card";
 import { brands } from "@/config/site";
 import { Timeline } from "@/components/timeline";
+import { Alert, AlertProps } from "@/components/alert";
 
 const texts = ["Software Engineer", "Backend Developer", "Fullstack Developer"];
 
@@ -464,6 +465,29 @@ export const Kontak = () => {
     return null; // Handle the case where context is undefined
   }
   const { kontakRef } = context;
+
+  const [nama, setNama] = useState('');
+  const [email, setEmail] = useState('');
+  const [pesan, setPesan] = useState('');
+  const [alert, setAlert] = useState<AlertProps | null>();
+
+  const handleSendForm = () => {
+    if (!nama || !email || !pesan) {
+      setAlert({ type: 'error', message: 'Nama, email, dan pesan tidak boleh kosong.' });
+      return;
+    }
+    const mailtoLink = `mailto:ade.rizaldi.mm2@gmail.com?subject=Kontak dari ${nama}&body=${encodeURIComponent(pesan)}%0D%0A%0D%0AEmail: ${email}`;
+    window.location.href = mailtoLink;
+    setAlert({ type: 'success', message: 'Terima kasih :D' });
+  };
+
+  const handleResetForm = () => {
+    setNama('');
+    setEmail('');
+    setPesan('');
+    setAlert(null);
+  };
+
   return (
     <section
       id="kontak"
@@ -480,40 +504,93 @@ export const Kontak = () => {
 
       <div className="grid grid-cols-1 py-3 md:py-8 gap-5 md:gap-8 w-full place-items-center">
         <Card className="w-full lg:w-3/4 p-8">
-          <div className="flex flex-col flex-wrap gap-2">
-            <Input
-              type="text"
-              label="Nama"
-              variant="bordered"
-              className="w-full"
-            />
-            <Input
-              type="email"
-              label="Email"
-              variant="bordered"
-              className="w-full"
-            />
-            <Textarea
-              label="Pesan"
-              placeholder="Tulis pesan Anda di sini..."
-              variant="bordered"
-              className="max-full"
-              minRows={8}
-            />
-            <div className="w-full flex flex-row justify-end gap-2">
+          <div className="flex flex-col flex-wrap gap-8">
+            <div className="text-center">
+              <h2 className="text-lg font-bold text-default-600 block subpixel-antialiased">
+                <span className="text-primary">Hubungi</span> saya untuk berdiskusi lebih lanjut<span className="text-primary">.</span>
+              </h2>
+            </div>
+            <div className="flex justify-center items-center gap-3">
               <Button
-                className="mt-3 text-white"
+                isIconOnly
+                radius="full"
+                as={Link}
+                href="https://wa.me/6282158155347"
+                target="_blank"
+                size="lg"
+              >
+                <BiLogoWhatsapp size={24} />
+              </Button>
+              <Button
+                isIconOnly
+                radius="full"
+                as={Link}
+                href="https://instagram.com/ade.rizaldi"
+                target="_blank"
+                size="lg"
+              >
+                <BiLogoInstagram size={24} />
+              </Button>
+              <Button
+                isIconOnly
+                radius="full"
+                as={Link}
+                href="https://www.linkedin.com/in/aderizaldi"
+                target="_blank"
+                size="lg"
+              >
+                <BiLogoLinkedin size={24} />
+              </Button>
+            </div>
+            <div className="text-center">
+              <p className="text-md text-default-600 block subpixel-antialiased">
+                atau email:
+              </p>
+            </div>
+            <div className="flex flex-col flex-wrap gap-3">
+              {alert && <Alert type={alert.type} message={alert.message} />}
+              <Input
+                type="text"
+                label="Nama"
                 variant="bordered"
-              >
-                Reset
-              </Button>
-              <Button
-                className="mt-3 text-white"
-                color="primary"
-                startContent={<BiSend size={20} />}
-              >
-                Kirim Email
-              </Button>
+                className="w-full"
+                onChange={(e) => setNama(e.target.value)}
+                value={nama}
+              />
+              <Input
+                type="email"
+                label="Email"
+                variant="bordered"
+                className="w-full"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+              />
+              <Textarea
+                label="Pesan"
+                placeholder="Tulis pesan Anda di sini..."
+                variant="bordered"
+                className="max-full"
+                minRows={8}
+                onChange={(e) => setPesan(e.target.value)}
+                value={pesan}
+              />
+              <div className="w-full flex flex-row justify-end gap-2">
+                <Button
+                  className="mt-3 text-white"
+                  variant="bordered"
+                  onClick={handleResetForm}
+                >
+                  Reset
+                </Button>
+                <Button
+                  className="mt-3 text-white"
+                  color="primary"
+                  startContent={<BiSend size={20} />}
+                  onClick={handleSendForm}
+                >
+                  Kirim Email
+                </Button>
+              </div>
             </div>
           </div>
         </Card>
