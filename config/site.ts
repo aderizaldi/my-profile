@@ -3,7 +3,8 @@ export type brands = typeof brands;
 
 export const siteConfig = {
   name: "aderizaldi",
-  description: "Website portofolio Ade Rizaldi",
+  description:
+    "Website portofolio Ade Rizaldi, Seorang software engineer yang berpengalaman mengembangkan aplikasi dan memelihara server.",
   links: {
     github: "https://github.com/aderizaldi",
     gitlab: "https://gitlab.com/aderizaldi",
