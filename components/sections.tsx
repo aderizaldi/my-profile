@@ -578,7 +578,7 @@ export const Kontak = () => {
                   />
                   <div className="w-full flex flex-row justify-end gap-2">
                     <Button
-                      className="mt-3 text-white"
+                      className="mt-3"
                       variant="bordered"
                       onClick={handleResetForm}
                     >
