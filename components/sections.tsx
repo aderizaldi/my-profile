@@ -98,14 +98,14 @@ export const Hero = () => {
           >
             <Card
               radius="sm"
-              className="my-3 w-[350px] border-none shadow-none"
+              className="my-3 w-[350px]"
             >
               <Image
                 removeWrapper
-                className="z-0 w-full object-cover"
+                className="z-0 w-full object-cover object-center"
                 src="/me.jpeg"
                 alt="Ade Rizaldi"
-                radius="none"
+                radius="sm"
               />
             </Card>
           </motion.div>
