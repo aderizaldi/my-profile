@@ -20,6 +20,8 @@ export const RevealAnimation = ({ children, width = "w-fit" }: Props) => {
       mainControls.start("visible");
       slideControls.start("visible");
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
   return (

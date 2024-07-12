@@ -460,16 +460,16 @@ export const Keterampilan = () => {
 }
 
 export const Kontak = () => {
+  const [nama, setNama] = useState('');
+  const [email, setEmail] = useState('');
+  const [pesan, setPesan] = useState('');
+  const [alert, setAlert] = useState<AlertProps | null>(null);
+
   const context = useContext(SectionContext);
   if (!context) {
     return null; // Handle the case where context is undefined
   }
   const { kontakRef } = context;
-
-  const [nama, setNama] = useState('');
-  const [email, setEmail] = useState('');
-  const [pesan, setPesan] = useState('');
-  const [alert, setAlert] = useState<AlertProps | null>();
 
   const handleSendForm = () => {
     if (!nama || !email || !pesan) {
