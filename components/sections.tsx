@@ -22,8 +22,7 @@ import { brands } from "@/config/site";
 import { Timeline } from "@/components/timeline";
 import { Alert, AlertProps } from "@/components/alert";
 
-const texts = ["Software Engineer", "Backend Developer", "Fullstack Developer"];
-
+const texts = ["Software Developer", "Backend Developer", "Fullstack Developer"];
 export const Hero = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   useEffect(() => {
@@ -32,6 +31,7 @@ export const Hero = () => {
     }, 3000); // Change message every 3 seconds
 
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const context = useContext(SectionContext);
