@@ -240,7 +240,7 @@ export const Timeline = () => {
                       <li>
                         <span className="text-default-600 font-normal">
                           Mengembangkan aplikasi dan website yang diperlukan
-                          oleh Universitas Tanjungpura.
+                          oleh UPT TIK Universitas Tanjungpura.
                         </span>
                       </li>
                     </ul>
@@ -261,7 +261,7 @@ export const Timeline = () => {
                       <li>
                         <span className="text-default-600 font-normal">
                           Mengembangkan aplikasi dan website yang diperlukan
-                          Universitas Tanjungpura.
+                          BWS Kalimantan I Pontianak.
                         </span>
                       </li>
                     </ul>
