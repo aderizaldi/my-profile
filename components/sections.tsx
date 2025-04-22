@@ -7,6 +7,7 @@ import {
   Card,
   CardBody,
   CardHeader,
+  CardFooter,
   Chip,
   Image,
   Link,
@@ -16,11 +17,12 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionContext } from "@/contexts/SectionContext";
 import { RevealAnimation } from "@/components/reveal-animation";
-import { BiFile, BiLogoInstagram, BiLogoLinkedin, BiLogoWhatsapp, BiSend, BiSolidMap } from "react-icons/bi";
+import { BiFile, BiLogoInstagram, BiLogoLinkedin, BiLogoWhatsapp, BiSend, BiSolidMap, BiSolidContact } from "react-icons/bi";
 import { CardBrand } from "@/components/card";
 import { brands } from "@/config/site";
 import { Timeline } from "@/components/timeline";
 import { Alert, AlertProps } from "@/components/alert";
+import { Modal } from "./modal";
 
 const texts = ["Software Developer", "Backend Developer", "Fullstack Developer"];
 export const Hero = () => {
@@ -38,7 +40,7 @@ export const Hero = () => {
   if (!context) {
     return null; // Handle the case where context is undefined
   }
-  const { homeRef } = context;
+  const { homeRef, scrollToSection, kontakRef } = context;
   return (
     <section
       className="grid grid-cols-1 md:grid-cols-2"
@@ -72,14 +74,11 @@ export const Hero = () => {
           <Button
             className="mt-3 text-white"
             radius="full"
-            as={Link}
             color="primary"
-            href="/cv-aderizaldi.pdf"
-            download="cv-aderizaldi.pdf"
-            target="_blank"
-            startContent={<BiFile size={20} />}
+            onClick={() => scrollToSection(kontakRef)}
+            startContent={<BiSolidContact size={20} />}
           >
-            Download CV
+            Hubungi Saya
           </Button>
         </RevealAnimation>
       </div>
@@ -261,12 +260,79 @@ export const Pengalaman = () => {
   );
 }
 
+type ModalContent = {
+  title: string
+  description?: string
+  features?: string
+  link?: string
+}
+
 export const Proyek = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [ModalContent, setModalContent] = useState<ModalContent>({
+    title: "",
+    description: "",
+    features: "",
+    link: "",
+  });
   const context = useContext(SectionContext);
   if (!context) {
     return null; // Handle the case where context is undefined
   }
   const { proyekRef } = context;
+
+  const openModal = (content: ModalContent) => {
+    setModalContent(content);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const list = [
+    {
+      title: "Orange",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      img: "/img/default.jpg",
+      price: "$5.50",
+    },
+    {
+      title: "Tangerine",
+      img: "/img/default.jpg",
+      price: "$3.00",
+    },
+    {
+      title: "Raspberry",
+      img: "/img/default.jpg",
+      price: "$10.00",
+    },
+    {
+      title: "Lemon",
+      img: "/img/default.jpg",
+      price: "$5.30",
+    },
+    {
+      title: "Avocado",
+      img: "/img/default.jpg",
+      price: "$15.70",
+    },
+    {
+      title: "Lemon 2",
+      img: "/img/default.jpg",
+      price: "$8.00",
+    },
+    {
+      title: "Banana",
+      img: "/img/default.jpg",
+      price: "$7.50",
+    },
+    {
+      title: "Watermelon",
+      img: "/img/default.jpg",
+      price: "$12.20",
+    },
+  ];
   return (
     <section
       id="proyek"
@@ -280,6 +346,30 @@ export const Proyek = () => {
           </h1>
         </RevealAnimation>
       </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-3 md:py-8 gap-5 md:gap-8 w-full">
+        {list.toReversed().map((item, index) => (
+          /* eslint-disable no-console */
+          <RevealAnimation key={index}>
+            <Card key={index} isPressable shadow="sm" onPress={() => openModal({ title: item.title, description: item.description })}>
+              <CardBody className="overflow-visible p-0">
+                <Image
+                  isZoomed
+                  alt={item.title}
+                  className="w-full object-cover h-[200px]"
+                  radius="lg"
+                  shadow="sm"
+                  src={item.img}
+                  width="100%"
+                />
+              </CardBody>
+              <CardFooter className="text-small justify-center h-16">
+                <b className="font-semibold line-clamp-2">{item.title}</b>
+              </CardFooter>
+            </Card>
+          </RevealAnimation>
+        ))}
+      </div>
+      <Modal isOpen={isModalOpen} onClose={closeModal} content={ModalContent} />
     </section>
   );
 }

@@ -57,7 +57,7 @@ export const RevealAnimation = ({ children, width = "w-fit" }: Props) => {
           duration: 0.5,
           ease: "easeIn",
         }}
-        className="absolute top-4 bottom-4 left-0 right-0 z-50 bg-[#D80032]"
+        className="absolute top-4 bottom-4 left-0 right-0 z-49 bg-[#D80032]"
       />
     </div>
   );
