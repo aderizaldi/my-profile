@@ -9,7 +9,7 @@ interface ModalProps {
 type ModalContent = {
     title: string
     description?: string
-    features?: string
+    tools?: string
     link?: string
     images?: [string]
 }
@@ -50,13 +50,13 @@ export const Modal = ({ isOpen = false, onClose = () => { }, content }: ModalPro
                                     {content?.description && (
                                         <>
                                             <h6 className="text-sm text-default-600">Deskripsi</h6>
-                                            <p className="text-sm text-default-400">{content?.description}</p>
+                                            <p className="text-sm text-default-400 text-justify">{content?.description}</p>
                                         </>
                                     )}
-                                    {content?.features && (
+                                    {content?.tools && (
                                         <>
-                                            <h6 className="text-sm text-default-600">Fitur</h6>
-                                            <p className="text-sm text-default-400">{content?.features}</p>
+                                            <h6 className="text-sm text-default-600">Tools</h6>
+                                            <p className="text-sm text-default-400 text-justify">{content?.tools}</p>
                                         </>
                                     )}
                                     {content?.link && (

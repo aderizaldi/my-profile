@@ -263,17 +263,15 @@ export const Pengalaman = () => {
 type ModalContent = {
   title: string
   description?: string
-  features?: string
+  tools?: string
   link?: string
+  images?: [string]
 }
 
 export const Proyek = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [ModalContent, setModalContent] = useState<ModalContent>({
     title: "",
-    description: "",
-    features: "",
-    link: "",
   });
   const context = useContext(SectionContext);
   if (!context) {
@@ -294,43 +292,37 @@ export const Proyek = () => {
     {
       title: "Orange",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      img: "/img/default.jpg",
-      price: "$5.50",
+      images: ["/img/default.jpg"],
+      tools: "HTML, CSS, JS",
+      link: "https://github.com/ade-rizaldi/ade-rizaldi.github.io",
     },
     {
       title: "Tangerine",
-      img: "/img/default.jpg",
-      price: "$3.00",
+      images: ["/img/default.jpg"],
     },
     {
       title: "Raspberry",
-      img: "/img/default.jpg",
-      price: "$10.00",
+      images: ["/img/default.jpg"],
     },
     {
       title: "Lemon",
-      img: "/img/default.jpg",
-      price: "$5.30",
+      images: ["/img/default.jpg"],
     },
     {
       title: "Avocado",
-      img: "/img/default.jpg",
-      price: "$15.70",
+      images: ["/img/default.jpg"],
     },
     {
       title: "Lemon 2",
-      img: "/img/default.jpg",
-      price: "$8.00",
+      images: ["/img/default.jpg"],
     },
     {
       title: "Banana",
-      img: "/img/default.jpg",
-      price: "$7.50",
+      images: ["/img/default.jpg"],
     },
     {
       title: "Watermelon",
-      img: "/img/default.jpg",
-      price: "$12.20",
+      images: ["/img/default.jpg"],
     },
   ];
   return (
@@ -350,7 +342,7 @@ export const Proyek = () => {
         {list.toReversed().map((item, index) => (
           /* eslint-disable no-console */
           <RevealAnimation key={index}>
-            <Card key={index} isPressable shadow="sm" onPress={() => openModal({ title: item.title, description: item.description })}>
+            <Card key={index} isPressable shadow="sm" onPress={() => openModal({ title: item.title, description: item.description, tools: item.tools, link: item.link, images: item.images as [string] })}>
               <CardBody className="overflow-visible p-0">
                 <Image
                   isZoomed
@@ -358,7 +350,7 @@ export const Proyek = () => {
                   className="w-full object-cover h-[200px]"
                   radius="lg"
                   shadow="sm"
-                  src={item.img}
+                  src={item.images ? item.images[0] : "/img/default.jpg"}
                   width="100%"
                 />
               </CardBody>
