@@ -451,7 +451,7 @@ export const Proyek = () => {
         {displayedProjects.map((item, index) => (
           /* eslint-disable no-console */
           <RevealAnimation width="w-full" key={index}>
-            <Card className="w-full" key={index} isPressable shadow="sm" onPress={() => openModal({ title: item.title, description: item.description, tools: item.tools, link: item.link, images: item.images as [string], category: item.category })}>
+            <Card className="w-full" key={index} isPressable shadow="sm" onPress={() => openModal(item as unknown as ModalContent)}>
               <CardBody className="w-full p-0">
                 <Image
                   isZoomed
