@@ -50,7 +50,7 @@ export default function RootLayout({
               <div className="flex items-center justify-center gap-1">
                 <p className="text-default-500">made with </p>
                 <span className="text-primary">
-                  <BiHeart />
+                  {/* <BiHeart /> */}
                 </span>
                 <p className="text-default-500">by me</p>
                 <Link
