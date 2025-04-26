@@ -428,7 +428,7 @@ export const Proyek = () => {
     }
   ];
 
-  const displayedProjects = showAll ? list.toReversed() : list.toReversed().slice(0, 8);
+  const displayedProjects = showAll ? list.reverse() : list.reverse().slice(0, 8);
 
   const toggleShowMore = () => {
     setShowAll(!showAll);
