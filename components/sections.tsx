@@ -17,12 +17,12 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionContext } from "@/contexts/SectionContext";
 import { RevealAnimation } from "@/components/reveal-animation";
-import { BiLogoInstagram, BiLogoLinkedin, BiLogoWhatsapp, BiSend, BiSolidMap, BiSolidContact } from "react-icons/bi";
+import { BiLogoInstagram, BiLogoLinkedin, BiLogoWhatsapp, BiSend, BiSolidMap, BiSolidContact, BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { CardBrand } from "@/components/card";
 import { brands } from "@/config/site";
 import { Timeline } from "@/components/timeline";
 import { Alert, AlertProps } from "@/components/alert";
-import { Modal, ModalContent, Category } from "@/components/modal";
+import { Modal, ModalContent } from "@/components/modal";
 
 const texts = ["Software Developer", "Backend Developer", "Fullstack Developer"];
 export const Hero = () => {
@@ -265,6 +265,7 @@ export const Proyek = () => {
   const [ModalContent, setModalContent] = useState<ModalContent>({
     title: "",
   });
+  const [showAll, setShowAll] = useState(false);
   const context = useContext(SectionContext);
   if (!context) {
     return null; // Handle the case where context is undefined
@@ -282,42 +283,157 @@ export const Proyek = () => {
 
   const list = [
     {
-      title: "Orange",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      category: "Backend",
-      images: ["/img/default.jpg", "/img/default.jpg"],
-      tools: "HTML, CSS, JS",
-      link: "https://github.com/ade-rizaldi/ade-rizaldi.github.io",
+      "title": "Vocasia Backend",
+      "description": "Pengembangan sistem backend untuk platform Vocasia dengan fokus pada performa API, optimasi database, dan implementasi logika bisnis yang efisien untuk mendukung aplikasi frontend.",
+      "category": "Pengembangan Backend",
+      "tools": "Node.js, Express, MongoDB, Docker",
+      "link": "",
+      "images": []
     },
     {
-      title: "Tangerine",
-      images: ["/img/default.jpg"],
+      "title": "BLiving Backend",
+      "description": "Perancangan infrastruktur backend untuk solusi BLiving Smart Home yang mengedepankan keamanan dan kestabilan komunikasi antara perangkat IoT dengan aplikasi pengguna.",
+      "category": "Pengembangan Backend",
+      "tools": "Python, Django, PostgreSQL, Redis",
+      "link": "",
+      "images": []
     },
     {
-      title: "Raspberry",
-      images: ["/img/default.jpg"],
+      "title": "Website PT Grha Digital Indonesia",
+      "description": "Pengembangan website korporat modern untuk PT Grha Digital Indonesia yang menonjolkan nilai perusahaan dan portofolio, dengan antarmuka yang responsif dan mudah dikelola.",
+      "category": "Pengembangan Web",
+      "tools": "Next.js, React, Tailwind CSS",
+      "link": "https://grhadigital.id",
+      "images": []
     },
     {
-      title: "Lemon",
-      images: ["/img/default.jpg"],
+      "title": "Smarthome Gateway for BLiving",
+      "description": "Implementasi sistem gateway untuk ekosistem smart home BLiving yang memungkinkan integrasi berbagai perangkat pintar dan manajemen terpusat untuk pengguna.",
+      "category": "Pengembangan IoT",
+      "tools": "Embedded Systems, MQTT, Node.js, C++",
+      "link": "",
+      "images": []
     },
     {
-      title: "Avocado",
-      images: ["/img/default.jpg"],
+      "title": "Website PT Umar",
+      "description": "Website untuk PT Umar yang bergerak di bidang properti, menampilkan lokasi setiap properti beserta sitemapnya untuk memudahkan calon pelanggan dalam mendapatkan informasi.",
+      "category": "Pengembangan Web",
+      "tools": "Next.js, React, Tailwind CSS",
+      "link": "https://sahabatsyariah.co.id",
+      "images": []
     },
     {
-      title: "Lemon 2",
-      images: ["/img/default.jpg"],
+      "title": "Sistem Manajemen Proyek Pekerja Borongan (Borovite)",
+      "description": "Pengembangan aplikasi manajemen pekerja borongan yang memudahkan alokasi tenaga kerja, monitoring progres, dan transparansi pembayaran untuk meningkatkan efisiensi operasional.",
+      "category": "Perangkat Lunak Perusahaan",
+      "tools": "React, Node.js, MySQL, Redux",
+      "link": "",
+      "images": []
     },
     {
-      title: "Banana",
-      images: ["/img/default.jpg"],
+      "title": "ECommerce Buda Arta Maju - Anggrek Dewata",
+      "description": "Pengembangan platform e-commerce untuk UMKM Buda Arta Maju yang menjual berbagai olahan jeruk, dilengkapi dengan fitur pencarian cerdas dan sistem pembayaran yang terintegrasi.",
+      "category": "E-Commerce",
+      "tools": "React, Next.js, Node.js, MongoDB",
+      "link": "https://anggrekdewata.com",
+      "images": []
     },
     {
-      title: "Watermelon",
-      images: ["/img/default.jpg"],
+      "title": "Sistem Informasi Tata Ruang (SIMTARU) Kab. Mempawah",
+      "description": "Pengembangan sistem informasi geografis untuk perencanaan tata ruang Kabupaten Mempawah yang memudahkan akses dan visualisasi data penggunaan lahan untuk publik dan pemangku kepentingan.",
+      "category": "Aplikasi GIS",
+      "tools": "React, Node.js, PostgreSQL, PostGIS, Leaflet",
+      "link": "https://simtaruv2.mempawahkab.com",
+      "images": []
     },
+    {
+      "title": "Website My Agro",
+      "description": "Perancangan platform digital pertanian My Agro yang menghubungkan petani dengan informasi, layanan, dan sumber daya untuk meningkatkan produktivitas dan pengetahuan di bidang agrikultur.",
+      "category": "Pengembangan Web",
+      "tools": "React, Next.js, Tailwind CSS",
+      "link": "https://myagro.id",
+      "images": []
+    },
+    {
+      "title": "Website Dies Natalies Untan",
+      "description": "Pembuatan website perayaan ulang tahun Universitas Tanjungpura dengan tampilan menarik dan fitur komprehensif untuk menampilkan agenda acara, dokumentasi kegiatan, dan konten perayaan.",
+      "category": "Pengembangan Web",
+      "tools": "Next.js, React, Tailwind CSS",
+      "link": "https://diesnatalis.untan.ac.id",
+      "images": []
+    },
+    {
+      "title": "Website Monitoring Unit Centre BWSK",
+      "description": "Pengembangan website monitoring yang menyediakan berbagai informasi seperti curah hujan, duga air, CCTV, dan data lainnya untuk mendukung pengawasan dan pengambilan keputusan.",
+      "category": "Aplikasi Web",
+      "tools": "React, Node.js, Express, MongoDB, D3.js",
+      "link": "",
+      "images": []
+    },
+    {
+      "title": "QROP Spasial Kota Pontianak",
+      "description": "Website untuk mendata wajib pajak perorangan ataupun perusahaan di Kota Pontianak, dengan integrasi teknologi GIS untuk mempermudah pengelolaan dan visualisasi data.",
+      "category": "Aplikasi GIS",
+      "tools": "React, Python, Django, PostgreSQL, PostGIS",
+      "link": "",
+      "images": []
+    },
+    {
+      "title": "Geoportal Landak",
+      "description": "Pengembangan portal geografis untuk Kabupaten Landak yang menyediakan akses mudah terhadap informasi spasial dan peta digital untuk mendukung pengambilan keputusan berbasis lokasi.",
+      "category": "Aplikasi GIS",
+      "tools": "React, Node.js, PostgreSQL, PostGIS, GeoServer",
+      "link": "",
+      "images": []
+    },
+    {
+      "title": "Sistem Pengelolaan Rapat Fakultas Teknik Untan",
+      "description": "Perancangan sistem digital untuk manajemen rapat di Fakultas Teknik Untan yang mengoptimalkan penjadwalan, dokumentasi, dan tindak lanjut hasil rapat secara terpadu.",
+      "category": "Perangkat Lunak Perusahaan",
+      "tools": "React, Node.js, Express, MySQL",
+      "link": "",
+      "images": []
+    },
+    {
+      "title": "Website Pengaduan Fakultas Teknik Untan",
+      "description": "Pengembangan platform pengaduan online untuk Fakultas Teknik Untan yang memfasilitasi komunikasi efektif antara mahasiswa dan fakultas dengan fitur pelacakan status dan respons.",
+      "category": "Aplikasi Web",
+      "tools": "React, Node.js, Express, MySQL",
+      "link": "",
+      "images": []
+    },
+    {
+      "title": "Sistem Pengelolaan Ruangan Fakultas Teknik Untan",
+      "description": "Implementasi sistem reservasi dan manajemen ruangan digital untuk Fakultas Teknik Untan yang meningkatkan efisiensi penggunaan fasilitas dan mengurangi konflik jadwal.",
+      "category": "Perangkat Lunak Perusahaan",
+      "tools": "React, Node.js, Express, MySQL",
+      "link": "",
+      "images": []
+    },
+    {
+      "title": "Ruwavicta",
+      "description": "Website yang menampilkan jualan produk skincare dengan desain modern dan fitur yang memudahkan pelanggan untuk menjelajahi produk.",
+      "category": "E-Commerce",
+      "tools": "React, Node.js, MongoDB, Docker",
+      "link": "",
+      "images": []
+    },
+    {
+      "title": "Smart Taruna",
+      "description": "Aplikasi ujian atau try out untuk belajar latihan tes masuk CPNS dan sekolah kedinasan, dengan fitur evaluasi hasil dan rekomendasi peningkatan.",
+      "category": "Teknologi Pendidikan",
+      "tools": "Next.js, Firebase, React Native",
+      "link": "",
+      "images": []
+    }
   ];
+
+  const displayedProjects = showAll ? list.toReversed() : list.toReversed().slice(0, 8);
+
+  const toggleShowMore = () => {
+    setShowAll(!showAll);
+  };
+
   return (
     <section
       id="proyek"
@@ -332,10 +448,10 @@ export const Proyek = () => {
         </RevealAnimation>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-3 md:py-8 gap-5 md:gap-8 w-full">
-        {list.toReversed().map((item, index) => (
+        {displayedProjects.map((item, index) => (
           /* eslint-disable no-console */
           <RevealAnimation width="w-full" key={index}>
-            <Card className="w-full" key={index} isPressable shadow="sm" onPress={() => openModal({ title: item.title, description: item.description, tools: item.tools, link: item.link, images: item.images as [string], category: item.category as Category })}>
+            <Card className="w-full" key={index} isPressable shadow="sm" onPress={() => openModal({ title: item.title, description: item.description, tools: item.tools, link: item.link, images: item.images as [string], category: item.category })}>
               <CardBody className="w-full p-0">
                 <Image
                   isZoomed
@@ -343,7 +459,7 @@ export const Proyek = () => {
                   className="w-full object-cover h-[200px]"
                   radius="lg"
                   shadow="sm"
-                  src={item.images ? item.images[0] : "/img/default.jpg"}
+                  src={item.images && item.images.length > 0 ? item.images[0] : "/img/default.jpg"}
                   width="100%"
                 />
               </CardBody>
@@ -354,6 +470,37 @@ export const Proyek = () => {
           </RevealAnimation>
         ))}
       </div>
+
+      {list.length > 8 && (
+        <div className="w-full flex justify-center">
+          {showAll ? (
+            <RevealAnimation>
+              <Button
+                color="primary"
+                variant="light"
+                onPress={toggleShowMore}
+                className="font-medium"
+                startContent={<BiChevronUp size={20} />}
+              >
+                Sembunyikan
+              </Button>
+            </RevealAnimation>
+          ) : (
+            <RevealAnimation>
+              <Button
+                color="primary"
+                variant="light"
+                onPress={toggleShowMore}
+                className="font-medium"
+                startContent={<BiChevronDown size={20} />}
+              >
+                Selengkapnya
+              </Button>
+            </RevealAnimation>
+          )}
+        </div>
+      )}
+
       <Modal isOpen={isModalOpen} onClose={closeModal} content={ModalContent} />
     </section>
   );

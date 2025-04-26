@@ -7,11 +7,10 @@ interface ModalProps {
     content?: ModalContent
 }
 
-export type Category = "Frontend" | "Backend" | "Fullstack";
 export type ModalContent = {
     title: string
     description?: string
-    category?: Category
+    category?: string
     tools?: string
     link?: string
     images?: [string]
