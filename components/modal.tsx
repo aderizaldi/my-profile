@@ -1,4 +1,5 @@
-import { Button, Modal as NextUIModal, ModalBody, ModalContent, ModalFooter, ModalHeader, Image } from "@nextui-org/react";
+import { Button, Modal as NextUIModal, ModalBody, ModalContent, ModalFooter, ModalHeader, Image, Chip } from "@nextui-org/react";
+import { ImageSlider } from "@/components/image-slider";
 
 interface ModalProps {
     isOpen?: boolean;
@@ -6,9 +7,11 @@ interface ModalProps {
     content?: ModalContent
 }
 
+type Category = "Frontend" | "Backend" | "Fullstack";
 type ModalContent = {
     title: string
     description?: string
+    category?: Category
     tools?: string
     link?: string
     images?: [string]
@@ -19,22 +22,15 @@ export const Modal = ({ isOpen = false, onClose = () => { }, content }: ModalPro
             <ModalContent>
                 {(onClose) => (
                     <>
-                        <ModalHeader className="flex flex-col gap-1">{content?.title}</ModalHeader>
+                        <ModalHeader className="flex gap-3 flex-wrap items-center justify-content-center">
+                            <h4 className="text-default-600">{content?.title}</h4>
+                            {content?.category && <Chip isDisabled size="sm" className="text-default-600">{content?.category}</Chip>}
+                        </ModalHeader>
                         <ModalBody>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
-                                    {content?.images ? (
-                                        content?.images.map((image, index) => (
-                                            <Image
-                                                key={index}
-                                                alt={content?.title}
-                                                className="w-full object-cover h-[300px]"
-                                                radius="lg"
-                                                shadow="sm"
-                                                src={image}
-                                                width="100%"
-                                            />
-                                        ))
+                                    {content?.images && content.images.length > 0 ? (
+                                        <ImageSlider images={content.images} title={content?.title} />
                                     ) : (
                                         <Image
                                             alt={content?.title}

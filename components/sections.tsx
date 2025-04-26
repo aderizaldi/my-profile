@@ -17,7 +17,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionContext } from "@/contexts/SectionContext";
 import { RevealAnimation } from "@/components/reveal-animation";
-import { BiFile, BiLogoInstagram, BiLogoLinkedin, BiLogoWhatsapp, BiSend, BiSolidMap, BiSolidContact } from "react-icons/bi";
+import { BiLogoInstagram, BiLogoLinkedin, BiLogoWhatsapp, BiSend, BiSolidMap, BiSolidContact } from "react-icons/bi";
 import { CardBrand } from "@/components/card";
 import { brands } from "@/config/site";
 import { Timeline } from "@/components/timeline";
@@ -260,10 +260,12 @@ export const Pengalaman = () => {
   );
 }
 
+type Category = 'Backend' | 'Frontend' | 'Mobile';
 type ModalContent = {
   title: string
   description?: string
   tools?: string
+  category?: Category
   link?: string
   images?: [string]
 }
@@ -292,7 +294,8 @@ export const Proyek = () => {
     {
       title: "Orange",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      images: ["/img/default.jpg"],
+      category: "Backend",
+      images: ["/img/default.jpg", "/img/default2.jpg"],
       tools: "HTML, CSS, JS",
       link: "https://github.com/ade-rizaldi/ade-rizaldi.github.io",
     },
@@ -341,9 +344,9 @@ export const Proyek = () => {
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-3 md:py-8 gap-5 md:gap-8 w-full">
         {list.toReversed().map((item, index) => (
           /* eslint-disable no-console */
-          <RevealAnimation key={index}>
-            <Card key={index} isPressable shadow="sm" onPress={() => openModal({ title: item.title, description: item.description, tools: item.tools, link: item.link, images: item.images as [string] })}>
-              <CardBody className="overflow-visible p-0">
+          <RevealAnimation width="w-full" key={index}>
+            <Card className="w-full" key={index} isPressable shadow="sm" onPress={() => openModal({ title: item.title, description: item.description, tools: item.tools, link: item.link, images: item.images as [string], category: item.category as Category })}>
+              <CardBody className="w-full p-0">
                 <Image
                   isZoomed
                   alt={item.title}
