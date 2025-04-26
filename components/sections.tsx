@@ -22,7 +22,7 @@ import { CardBrand } from "@/components/card";
 import { brands } from "@/config/site";
 import { Timeline } from "@/components/timeline";
 import { Alert, AlertProps } from "@/components/alert";
-import { Modal } from "./modal";
+import { Modal, ModalContent, Category } from "@/components/modal";
 
 const texts = ["Software Developer", "Backend Developer", "Fullstack Developer"];
 export const Hero = () => {
@@ -260,16 +260,6 @@ export const Pengalaman = () => {
   );
 }
 
-type Category = 'Backend' | 'Frontend' | 'Mobile';
-type ModalContent = {
-  title: string
-  description?: string
-  tools?: string
-  category?: Category
-  link?: string
-  images?: [string]
-}
-
 export const Proyek = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [ModalContent, setModalContent] = useState<ModalContent>({
@@ -295,7 +285,7 @@ export const Proyek = () => {
       title: "Orange",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       category: "Backend",
-      images: ["/img/default.jpg", "/img/default2.jpg"],
+      images: ["/img/default.jpg", "/img/default.jpg"],
       tools: "HTML, CSS, JS",
       link: "https://github.com/ade-rizaldi/ade-rizaldi.github.io",
     },
