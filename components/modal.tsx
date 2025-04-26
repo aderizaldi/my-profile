@@ -65,7 +65,7 @@ export const Modal = ({ isOpen = false, onClose = () => { }, content }: ModalPro
                             </div>
                         </ModalBody>
                         <ModalFooter>
-                            <Button color="danger" variant="light" onPress={onClose}>
+                            <Button color="danger" variant="ghost" onPress={onClose}>
                                 Tutup
                             </Button>
                         </ModalFooter>
